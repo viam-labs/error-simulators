@@ -131,7 +131,7 @@ func (s *everythingErrorsErrorGripper) Status(ctx context.Context) (map[string]i
 }
 
 func (s *everythingErrorsErrorGripper) IsMoving(ctx context.Context) (bool, error) {
-	return false, fmt.Errorf("not implemented")
+	return false, fmt.Errorf("the IsMoving operation on the everything-errors error-gripper component could not be completed because this method has not yet been implemented; the gripper was unable to determine or report whether it is currently in motion, so the returned moving status should not be trusted, and please implement the IsMoving method before relying on this status")
 }
 
 func (s *everythingErrorsErrorGripper) Geometries(ctx context.Context, extra map[string]interface{}) ([]spatialmath.Geometry, error) {
