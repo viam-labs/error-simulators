@@ -1,0 +1,13 @@
+{
+  "module_name": "everything-errors",
+  "visibility": "public",
+  "namespace": "viam",
+  "language": "go",
+  "resource_type": "component",
+  "resource_subtype": "gripper",
+  "model_name": "error-gripper",
+  "initialize_git": false,
+  "generator_version": "0.1.0",
+  "generated_on": "2026-07-09T14:23:11.16142Z",
+  "module_readme_link": "README.md"
+}
