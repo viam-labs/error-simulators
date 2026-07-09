@@ -1,47 +1,52 @@
 # Model viam:everything-errors:error-gripper
 
-Provide a description of the model and any relevant information.
+`error-gripper` is a mock/simulator implementation of the Viam [gripper](https://docs.viam.com/components/gripper/) API. It initializes successfully and behaves like a normal gripper resource on the machine, but **every gripper API method returns an error**.
+
+Use it to test how your application, control code, and observability tooling respond to a gripper that is present and configured but never actually performs any motion or reports any real state.
+
+## Behavior
+
+- **Initialization succeeds.** The component constructs without error and comes up healthy.
+- **Every functional API call fails.** `Open`, `Grab`, `IsHoldingSomething`, `Stop`, `DoCommand`, `IsMoving`, `Geometries`, `Kinematics`, `CurrentInputs`, and `GoToInputs` all return a descriptive error.
+- **`Close` succeeds.** The resource cleans up normally so it can be reconfigured or removed.
 
 ## Configuration
-The following attribute template can be used to configure this model:
+
+This model does not require any configuration attributes. An empty attribute object is sufficient:
 
 ```json
-{
-"attribute_1": <float>,
-"attribute_2": <string>
-}
+{}
 ```
 
 ### Attributes
 
-The following attributes are available for this model:
-
-| Name          | Type   | Inclusion | Description                |
-|---------------|--------|-----------|----------------------------|
-| `attribute_1` | float  | Required  | Description of attribute 1 |
-| `attribute_2` | string | Optional  | Description of attribute 2 |
+This model has no configurable attributes.
 
 ### Example Configuration
 
 ```json
 {
-  "attribute_1": 1.0,
-  "attribute_2": "foo"
+  "name": "gripper-1",
+  "model": "viam:everything-errors:error-gripper",
+  "type": "gripper",
+  "namespace": "rdk",
+  "attributes": {}
 }
 ```
 
 ## DoCommand
 
-If your model implements DoCommand, provide an example payload of each command that is supported and the arguments that can be used. If your model does not implement DoCommand, remove this section.
+`DoCommand` is implemented, but like every other method on this model it always returns an error. Any command payload you send will be rejected.
 
 ### Example DoCommand
 
 ```json
 {
-  "command_name": {
+  "any_command": {
     "arg1": "foo",
     "arg2": 1
   }
 }
 ```
 
+The call above will return an error rather than a result.
