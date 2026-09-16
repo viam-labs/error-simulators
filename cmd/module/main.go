@@ -2,10 +2,10 @@ package main
 
 import (
 	"everythingerrors"
-	"go.viam.com/rdk/module"
-	"go.viam.com/rdk/resource"
 	gripper "go.viam.com/rdk/components/gripper"
 	motor "go.viam.com/rdk/components/motor"
+	"go.viam.com/rdk/module"
+	"go.viam.com/rdk/resource"
 )
 
 func main() {
