@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"everythingerrors"
+	gripper "go.viam.com/rdk/components/gripper"
 	"go.viam.com/rdk/logging"
 	"go.viam.com/rdk/resource"
-	gripper "go.viam.com/rdk/components/gripper"
 )
 
 func main() {
