@@ -2,7 +2,6 @@ package everythingerrors
 
 import (
 	"context"
-	"errors"
 	"fmt"
 
 	gripper "go.viam.com/rdk/components/gripper"
@@ -13,8 +12,7 @@ import (
 )
 
 var (
-	ErrorGripper     = resource.NewModel("viam", "everything-errors", "error-gripper")
-	errUnimplemented = errors.New("unimplemented")
+	ErrorGripper = resource.NewModel("viam", "everything-errors", "error-gripper")
 )
 
 func init() {
